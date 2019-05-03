@@ -1,0 +1,78 @@
+======================16====================== 
+ 
+; Print the ASCII code of a char in binary form , ----- use of Bitwise AND and OR instructions 
+ 
+; File Name 20140326_1 
+; Example A 0100 0001 
+ 
+00 : ;      51       ;                  ; ;  output char ch, using direct mode 
+     : ;    51         ;                  ; ;  output char tab, using direct mode 
+     : ;    C1 00 00         ;                  ; ;  clear register r -- load register r, using immediate mode 
+     : ;    C1          ;                  ; ;  for bit 8 -- load byte register r from ch, using direct mode 
+0C: ;       17    ;                  ; ;  bit 8 of A -- bitwise AND to register with 01, using immediate mode, to keep rightmost bit of r unchanged and rest set to 0 
+     : ;    71       ;                  ; ;  convert right byte of r to char, by adding 48 -- using immediate mode 
+     : ;    F9       ;                  ; ;  store byte register to ch8 -- using immediate mode 
+     : ;    D1       ;                  ; ;  for bit 7 of A -- load byte register r from ch, using direct mode 
+     : ;    F        ;                  ; ;  move bit 7 to bit 8 location in r -- ASR register r 
+     : ;    F        ;                  ; ;  save byte r to ch for next step -- store byte register r to ch 
+     : ;    90       ;                  ; ;  bit 7 of A -- bitwise AND to register with 01, using immediate mode, to keep rightmost bit of r unchanged and rest set to 0 
+     : ;    71       ;                  ; ;  convert right byte of r to char, by adding 48 -- using immediate mode 
+     : ;    F9       ;                  ; ;  store byte register to ch7 -- using immediate mode 
+     : ;    D1       ;                  ; ;  for bit 6 of A -- load byte register r from ch, using direct mode 
+     : ;             ;                  ; ;  move bit 7 to bit 8 location in r -- ASR register r 
+     : ;             ;                  ; ;  save byte r to ch for next step -- store byte register r to ch 
+2C: ;             ;                  ; ;  bit 6 of A -- bitwise AND to register with 01, using immediate mode, to keep rightmost bit of r unchanged and rest set to 0 
+     : ;             ;                  ; ;  convert right byte of r to char, by adding 48 -- using immediate mode 
+     : ;             ;                  ; ;  store byte register to ch6 -- using immediate mode 
+     : ;             ;                  ; ;  for bit 5 of A -- load byte register r from ch, using direct mode 
+     : ;             ;                  ; ;  move bit 7 to bit 8 location in r -- ASR register r 
+     : ;             ;                  ; ;  save byte r to ch for next step -- store byte register r to ch 
+     : ;             ;                  ; ;  bit 5 of A -- bitwise AND to register with 01, using immediate mode, to keep rightmost bit of r unchanged and rest set to 0 
+     : ;             ;                  ; ;  convert right byte of r to char, by adding 48 -- using immediate mode 
+     : ;             ;                  ; ;  store byte register to ch5 -- using immediate mode 
+45 : ;             ;                  ; ;  for bit 4 of A -- load byte register r from ch, using direct mode 
+     : ;             ;                  ; ;  move bit 7 to bit 8 location in r -- ASR register r 
+     : ;             ;                  ; ;  save byte r to ch for next step -- store byte register r to ch 
+     : ;             ;                  ; ;  bit 4 of A -- bitwise AND to register with 01, using immediate mode, to keep rightmost bit of r unchanged and rest set to 0 
+     : ;             ;                  ; ;  convert right byte of r to char, by adding 48 -- using immediate mode 
+     : ;             ;                  ; ;  store byte register to ch4 -- using immediate mode 
+     : ;             ;                  ; ;  for bit 3 of A -- load byte register r from ch, using direct mode 
+     : ;             ;                  ; ;  move bit 7 to bit 8 location in r -- ASR register r 
+     : ;             ;                  ; ;  save byte r to ch for next step -- store byte register r to ch 
+5C: ;             ;                  ; ;  bit 3 of A -- bitwise AND to register with 01, using immediate mode, to keep rightmost bit of r unchanged and rest set to 0 
+     : ;             ;                  ; ;  convert right byte of r to char, by adding 48 -- using immediate mode 
+     : ;             ;                  ; ;  store byte register to ch3 -- using immediate mode 
+     : ;             ;                  ; ;  for bit 2 of A -- load byte register r from ch, using direct mode 
+     : ;             ;                  ; ;  move bit 7 to bit 8 location in r -- ASR register r 
+     : ;             ;                  ; ;  save byte r to ch for next step -- store byte register r to ch 
+6C: ;             ;                  ; ;  bit 2 of A -- bitwise AND to register with 01, using immediate mode, to keep rightmost bit of r unchanged and rest set to 0 
+     : ;             ;                  ; ;  convert right byte of r to char, by adding 48 -- using immediate mode 
+     : ;             ;                  ; ;  store byte register to ch2 -- using immediate mode 
+     : ;             ;                  ; ;  for bit 1 of A -- load byte register r from ch, using direct mode 
+     : ;             ;                  ; ;  move bit 7 to bit 8 location in r -- ASR register r 
+     : ;             ;                  ; ;  save byte r to ch for next step -- store byte register r to ch 
+     : ;             ;                  ; ;  bit 1 of A -- bitwise AND to register with 01, using immediate mode, to keep rightmost bit of r unchanged and rest set to 0 
+     : ;             ;                  ; ;  convert right byte of r to char, by adding 48 -- using immediate mode 
+     : ;             ;                  ; ;  store byte register to ch1 -- using immediate mode 
+85 : ;             ;                  ; ;  output char chb1, using direct mode 
+     : ;             ;                  ; ;  output char chb2, using direct mode 
+     : ;             ;                  ; ;  output char chb3, using direct mode 
+     : ;             ;                  ; ;  output char chb4, using direct mode 
+     : ;             ;                  ; ;  output char blank, using direct mode 
+     : ;             ;                  ; ;  output char chb5, using direct mode 
+     : ;             ;                  ; ;  output char chb6, using direct mode 
+     : ;             ;                  ; ;  output char chb7, using direct mode 
+     : ;             ;                  ; ;  output char chb8, using direct mode 
+     : ;             ;                  ; ;  stop  
+A1: ; ch      : ;                  ; ; A 
+     : ; tab     : ;                  ; ; tab 
+     : ; chb1  : ;                  ; ;  
+     : ; chb2  : ;                  ; ;  
+     : ; chb3  : ;                  ; ;  
+     : ; chb4  : ;                  ; ;  
+     : ; blank : ;                  ; ;  
+     : ; chd5  : ;                  ; ;  
+     : ; chb6  : ;                  ; ;  
+     : ; chb7  : ;                  ; ;  
+AB : ; chb8 : ;                  ; ;  
+zz 
